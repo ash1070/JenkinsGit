@@ -15,13 +15,11 @@ pipeline {
 			
 		
 
-			ci_type = input( 
-					
-					parameters { 
-       						choice(name: 'veracode', choices: ['dev_ci', 'prod_ci', 'dev_ci'], description: '') }
-					
-			       
-			       )
+			ci_type = input(
+                        			message: "Select a git tag",
+                        			parameters: [choice(name: "git_tag", choices: ["dev_ci"."prod_ci"], description: "Git tag")]
+                    			)
+			
 			}
 		
                 echo 'This stage will be executed first'
