@@ -17,7 +17,7 @@ pipeline {
 
 			ci_type = input(
                         			message: "Select a git tag",
-                        			parameters: [choice(name: "git_tag", choices: ["dev_ci"."prod_ci"], description: "Git tag")]
+                        			parameters: [choice(name: "git_tag", choices: ["dev_ci" , "prod_ci"], description: "Git tag")]
                     			)
 			
 			}
