@@ -1,3 +1,6 @@
+
+def ci_type = DEV_CI
+
 pipeline {
     agent none
     stages {
@@ -7,7 +10,18 @@ pipeline {
                         label "master"
                 }
         steps {
+
+		ci_type = input( 
+					message "select veracode sandbox type"
+					parameters {
+                    				choice(name: "ci_vera", choices: ["DEV_CI" , "PROD_CI"] , description: "ci_veracode")
+                			}
+					
+			       
+			       )
+		
                 echo 'This stage will be executed first'
+		
                 }
         }
 
