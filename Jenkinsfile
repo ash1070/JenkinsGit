@@ -11,14 +11,19 @@ pipeline {
                 }
         steps {
 
-		ci_type = input( 
+		script{
+			
+		
+
+			ci_type = input( 
 					
 					parameters {
                     				choice(name: 'ci_vera', choices: ['DEV_CI' , 'PROD_CI'] , description: 'ci_veracode')
-                			}
+                				}
 					
 			       
 			       )
+			}
 		
                 echo 'This stage will be executed first'
 		
