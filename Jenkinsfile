@@ -17,9 +17,8 @@ pipeline {
 
 			ci_type = input( 
 					
-					parameters {
-                    				choice(name: 'ci_vera', choices: ['DEV_CI' , 'PROD_CI'] , description: 'ci_veracode')
-                				}
+					parameters { 
+       						choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') }
 					
 			       
 			       )
