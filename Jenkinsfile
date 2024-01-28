@@ -12,9 +12,9 @@ pipeline {
         steps {
 
 		ci_type = input( 
-					message "select veracode sandbox type"
+					
 					parameters {
-                    				choice(name: "ci_vera", choices: ["DEV_CI" , "PROD_CI"] , description: "ci_veracode")
+                    				choice(name: 'ci_vera', choices: ['DEV_CI' , 'PROD_CI'] , description: 'ci_veracode')
                 			}
 					
 			       
@@ -34,7 +34,7 @@ pipeline {
                         label "master"
                     }
                     steps {
-						echo "Task1 on Master"
+				echo "$ci_type"
 			}
                 }
             }
