@@ -1,5 +1,5 @@
 
-def ci_type = DEV_CI
+def ci_type = "dev_ci"
 
 pipeline {
     agent none
@@ -18,7 +18,7 @@ pipeline {
 			ci_type = input( 
 					
 					parameters { 
-       						choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') }
+       						choice(name: 'veracode', choices: ['dev_ci', 'prod_ci', 'dev_ci'], description: '') }
 					
 			       
 			       )
