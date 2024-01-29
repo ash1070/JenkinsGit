@@ -9,7 +9,7 @@ node {
         // mvnHome = tool 'M3'
         
       script {
-             build job:'first_job'
+             build job:'parametrized_job'
            
         } 
         
