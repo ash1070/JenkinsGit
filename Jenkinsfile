@@ -2,7 +2,7 @@
 def ci_type = "dev_ci"
 
 pipeline {
-    agent any
+    
     stages {
 	
 	stage('Select input') {
