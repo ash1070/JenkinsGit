@@ -6,7 +6,7 @@ pipeline {
     stages {
 	
 	stage('Select input') {
-	    
+	agent any
         steps {
 
 		script{
