@@ -5,10 +5,8 @@ pipeline {
     agent none
     stages {
 	
-	stage('Non-Parallel Stage') {
-	    agent {
-                        label "master"
-                }
+	stage('Select input') {
+	    
         steps {
 
 		script{
@@ -32,9 +30,7 @@ pipeline {
             parallel {
                 
                 stage('Test On Master') {
-                    agent {
-                        label "master"
-                    }
+                    
                     steps {
 				echo "$ci_type"
 			}
