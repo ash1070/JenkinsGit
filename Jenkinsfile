@@ -12,18 +12,11 @@ pipeline {
 		script{
 			
 			git url: 'https://github.com/ash1070/jenkinsGit2.git'
-			// GIT_COMMIT_EMAIL = sh (
-			//     script: 'git branch -a | grep remotes > ${WORKSPACE}/branchesList.txt',
-			//     returnStdout: true
-			// ).trim()
-			sh """
-	                        // mkdir git_check
-	                        // cd git_check
-	                        // git clone https://${gitUser}:${key}@${GIT_URL} .
-	                        git branch -a | grep remotes > ${WORKSPACE}/branchesList.txt 
-	                        // cd ..
-	                        // rm -r git_check
-                     	"""
+			GIT_COMMIT_EMAIL = sh (
+			    script: 'git branch -a | grep remotes > ${WORKSPACE}/branchesList.txt',
+			    returnStdout: true
+			).trim()
+			
 			echo "Git committer email: ${GIT_COMMIT_EMAIL}"
 			ci_type = input(
                         			message: "Select a git tag",
